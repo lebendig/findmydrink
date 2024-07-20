@@ -21,7 +21,7 @@ export class DrinkService {
   }
 
   searchDrinks(name: string): Observable<Drink[]> {
-    return this.http.get<Drink[]>(`${this.apiUrl}/search?name=${name}`);
+    return this.http.get<Drink[]>(`${this.apiUrl}?name=${name}`);
   }
 
   createDrink(drink: Drink): Observable<Drink> {
@@ -35,4 +35,5 @@ export class DrinkService {
   deleteDrink(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
 }

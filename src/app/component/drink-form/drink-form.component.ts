@@ -17,7 +17,7 @@ export class DrinkFormComponent {
   constructor(
     private drinkService: DrinkService,
     private route: ActivatedRoute,
-    private router: Router
+    public router: Router
   ) {}
 
   ngOnInit(): void {

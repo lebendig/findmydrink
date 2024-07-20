@@ -1,12 +1,20 @@
-<h2>{{ isEditMode ? 'Edit' : 'Add' }} Drink</h2>
-<form (ngSubmit)="saveDrink()">
-    <label for="name">Name:</label>
-    <input id="name" [(ngModel)]="drink.name" name="name" required>
+<mat-toolbar color="primary">
+  <span>{{ isEditMode ? 'Edit' : 'Add' }} Drink</span>
+</mat-toolbar>
 
-    <label for="recipe">Recipe:</label>
-    <textarea id="recipe" [(ngModel)]="drink.recipe" name="recipe" required></textarea>
+<div class="container">
+  <form (ngSubmit)="saveDrink()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="drink.name" name="name" required>
+    </mat-form-field>
 
-    <button type="submit">{{ isEditMode ? 'Update' : 'Save' }}</button>
-    <button type="button" (click)="router.navigate(['/'])">Cancel</button>
-</form>
+    <mat-form-field appearance="fill">
+      <mat-label>Recipe</mat-label>
+      <textarea matInput [(ngModel)]="drink.recipe" name="recipe" required></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Update' : 'Save' }}</button>
+    <button mat-button type="button" (click)="router.navigate(['/'])">Cancel</button>
+  </form>
 </div>

@@ -11,6 +11,7 @@ import { DrinkService } from 'src/app/service/drink.service';
 export class DrinkListComponent {
 
   drinks: Drink[] = [];
+  selectedDrink: Drink | null = null;
   searchQuery: string = '';
 
   constructor(private drinkService: DrinkService) { }
@@ -25,10 +26,17 @@ export class DrinkListComponent {
 
   searchDrinks(): void {
       if (this.searchQuery.trim()) {
-          this.drinkService.searchDrinks(this.searchQuery).subscribe(drinks => this.drinks = drinks);
+          this.drinkService.searchDrinks(this.searchQuery).subscribe(drinks => {
+              this.drinks = drinks;
+              this.selectedDrink = null; // Reset selected drink
+          });
       } else {
           this.loadDrinks();
       }
+  }
+
+  selectDrink(drink: Drink): void {
+      this.selectedDrink = drink;
   }
 
   deleteDrink(id: number): void {
