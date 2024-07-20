@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { DrinkFormComponent } from './component/drink-form/drink-form.component';
-import { DrinkListComponent } from './component/drink-list/drink-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -18,14 +16,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SearchComponentTsComponent } from './component/search.component.ts/search.component.ts.component';
+import { DrinksComponent } from './component/drinks/drinks.component';
+import { EditDrinkComponent } from './component/edit-drink/edit-drink.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DrinkListComponent,
-    DrinkFormComponent,
-    SearchComponentTsComponent
+    DrinksComponent,
+    EditDrinkComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,10 @@ import { SearchComponentTsComponent } from './component/search.component.ts/sear
     MatListModule,
     MatSidenavModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

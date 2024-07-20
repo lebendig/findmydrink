@@ -12,28 +12,12 @@ export class DrinkService {
 
   constructor(private http: HttpClient) { }
 
-  getDrinks(): Observable<Drink[]> {
-    return this.http.get<Drink[]>(this.apiUrl);
+  searchDrinks(name: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}?name=${name}`);
   }
 
-  getDrinkById(id: number): Observable<Drink> {
-    return this.http.get<Drink>(`${this.apiUrl}/${id}`);
-  }
-
-  searchDrinks(name: string): Observable<Drink[]> {
-    return this.http.get<Drink[]>(`${this.apiUrl}?name=${name}`);
-  }
-
-  createDrink(drink: Drink): Observable<Drink> {
-    return this.http.post<Drink>(this.apiUrl, drink);
-  }
-
-  updateDrink(id: number, drink: Drink): Observable<Drink> {
-    return this.http.put<Drink>(`${this.apiUrl}/${id}`, drink);
-  }
-
-  deleteDrink(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  updateDrink(id: number, drink: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, drink);
   }
 
 }

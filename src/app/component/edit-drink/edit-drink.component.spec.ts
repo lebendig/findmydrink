@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DrinkFormComponent } from './drink-form.component';
+import { EditDrinkComponent } from './edit-drink.component';
 
-describe('DrinkFormComponent', () => {
-  let component: DrinkFormComponent;
-  let fixture: ComponentFixture<DrinkFormComponent>;
+describe('EditDrinkComponent', () => {
+  let component: EditDrinkComponent;
+  let fixture: ComponentFixture<EditDrinkComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DrinkFormComponent]
+      declarations: [EditDrinkComponent]
     });
-    fixture = TestBed.createComponent(DrinkFormComponent);
+    fixture = TestBed.createComponent(EditDrinkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,50 @@
+<mat-toolbar color="primary">
+  <span>Drink Recipes</span>
+</mat-toolbar>
+
+<div class="container mt-4">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Search for Drinks</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="searchDrinks()">
+        <mat-form-field appearance="fill">
+          <mat-label>Search by Name</mat-label>
+          <input matInput [(ngModel)]="searchTerm" name="searchTerm" placeholder="Enter drink name">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Search</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="mt-4">
+    <mat-card-header>
+      <mat-card-title>Drink List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="drinks" class="mat-elevation-z8">
+        <!-- Columns definitions -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let drink">{{ drink.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="recipe">
+          <th mat-header-cell *matHeaderCellDef>Recipe</th>
+          <td mat-cell *matCellDef="let drink">{{ drink.recipe }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let drink">
+            <button mat-button (click)="openEditDialog(drink)">Show Drink</button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>
