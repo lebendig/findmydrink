@@ -35,9 +35,8 @@ export class DrinksComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.drinkService.updateDrink(result.id!, result).subscribe(() => {
-          this.searchDrinks();
-        });
+        // Refresh the list after saving
+        this.searchDrinks();
       }
     });
   }
