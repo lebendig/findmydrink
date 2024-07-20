@@ -1,0 +1,11 @@
+<div>
+  <h2>Drink Recipes</h2>
+  <input [(ngModel)]="searchQuery" (input)="searchDrinks()" placeholder="Search for drinks">
+  <ul>
+      <li *ngFor="let drink of drinks">
+          {{ drink.name }} - {{ drink.recipe }}
+          <button (click)="deleteDrink(drink.id!)">Delete</button>
+      </li>
+  </ul>
+  <a routerLink="/add">Add New Drink</a>
+</div>

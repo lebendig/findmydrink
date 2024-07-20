@@ -38,5 +38,22 @@ testem.log
 /typings
 
 # System files
+.env
 .DS_Store
 Thumbs.db
+
+# Arquivos de compilação e dependências
+dist/
+*.pem
+*.log
+npm-debug.log*
+
+# Arquivos de configuração
+.angular/*
+!.angular/.editorconfig
+!.angular/.gitignore
+!.angular/.gitattributes
+!.angular/.eslintrc
+!.angular/.eslintignore
+!.angular/tsconfig.json
+!.angular/tsconfig.spec.json

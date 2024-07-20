@@ -1,0 +1,12 @@
+<h2>{{ isEditMode ? 'Edit' : 'Add' }} Drink</h2>
+<form (ngSubmit)="saveDrink()">
+    <label for="name">Name:</label>
+    <input id="name" [(ngModel)]="drink.name" name="name" required>
+
+    <label for="recipe">Recipe:</label>
+    <textarea id="recipe" [(ngModel)]="drink.recipe" name="recipe" required></textarea>
+
+    <button type="submit">{{ isEditMode ? 'Update' : 'Save' }}</button>
+    <button type="button" (click)="router.navigate(['/'])">Cancel</button>
+</form>
+</div>
