@@ -20,12 +20,14 @@ import { DrinksComponent } from './component/drinks/drinks.component';
 import { EditDrinkComponent } from './component/edit-drink/edit-drink.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { AddDrinkComponent } from './component/add-drink/add-drink.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DrinksComponent,
-    EditDrinkComponent
+    EditDrinkComponent,
+    AddDrinkComponent
   ],
   imports: [
     BrowserModule,

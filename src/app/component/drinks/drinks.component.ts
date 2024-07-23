@@ -3,6 +3,7 @@ import { DrinkService } from 'src/app/service/drink.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Drink } from 'src/app/models/drink';
 import { EditDrinkComponent } from '../edit-drink/edit-drink.component';
+import { AddDrinkComponent } from '../add-drink/add-drink.component';
 
 @Component({
   selector: 'app-drinks',
@@ -37,6 +38,28 @@ export class DrinksComponent implements OnInit {
       if (result) {
         // Refresh the list after saving
         this.searchDrinks();
+      }
+    });
+  }
+
+  deleteDrink(id: number): void {
+    if (confirm('Are you sure you want to delete this drink?')) {
+      this.drinkService.deleteDrink(id).subscribe(() => {
+        this.searchDrinks(); // Refresh the list after deletion
+      }, error => {
+        console.error('Error deleting drink', error);
+      });
+    }
+  }
+
+  openAddDialog(): void {
+    const dialogRef = this.dialog.open(AddDrinkComponent, {
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.searchDrinks(); // Refresh the list
       }
     });
   }

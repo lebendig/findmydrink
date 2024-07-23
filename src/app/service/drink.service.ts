@@ -24,4 +24,8 @@ export class DrinkService {
     }
   }
 
+  deleteDrink(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
 }
