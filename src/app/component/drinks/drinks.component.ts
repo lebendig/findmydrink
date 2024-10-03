@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Drink } from 'src/app/models/drink';
 import { EditDrinkComponent } from '../edit-drink/edit-drink.component';
 import { AddDrinkComponent } from '../add-drink/add-drink.component';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-drinks',
@@ -11,7 +12,7 @@ import { AddDrinkComponent } from '../add-drink/add-drink.component';
   styleUrls: ['./drinks.component.scss']
 })
 export class DrinksComponent implements OnInit {
-  drinks: Drink[] = [];
+  drinks: MatTableDataSource<Drink> = new MatTableDataSource<Drink>();
   searchTerm: string = '';
   displayedColumns: string[] = ['name', 'recipe', 'actions'];
 
@@ -20,24 +21,30 @@ export class DrinksComponent implements OnInit {
     private dialog: MatDialog
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.loadDrinks();
+  }
+
+  loadDrinks(): void {
+    this.drinkService.getDrinks().subscribe(data => {
+      this.drinks.data = data;
+    });
+  }
 
   searchDrinks(): void {
-    this.drinkService.searchDrinks(this.searchTerm).subscribe(data => {
-      this.drinks = data;
-    });
+    const filterValue = this.searchTerm.trim().toLowerCase();
+    this.drinks.filter = filterValue;
   }
 
   openEditDialog(drink: Drink): void {
     const dialogRef = this.dialog.open(EditDrinkComponent, {
       width: '400px',
-      data: { ...drink } // Pass a copy of the drink data
+      data: { ...drink }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // Refresh the list after saving
-        this.searchDrinks();
+        this.loadDrinks();
       }
     });
   }
@@ -45,7 +52,7 @@ export class DrinksComponent implements OnInit {
   deleteDrink(id: number): void {
     if (confirm('Are you sure you want to delete this drink?')) {
       this.drinkService.deleteDrink(id).subscribe(() => {
-        this.searchDrinks(); // Refresh the list after deletion
+        this.loadDrinks();
       }, error => {
         console.error('Error deleting drink', error);
       });
@@ -59,7 +66,7 @@ export class DrinksComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.searchDrinks(); // Refresh the list
+        this.loadDrinks();
       }
     });
   }

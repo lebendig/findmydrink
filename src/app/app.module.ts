@@ -41,6 +41,7 @@ import { AddDrinkComponent } from './component/add-drink/add-drink.component';
     MatToolbarModule,
     MatIconModule,
     MatFormFieldModule,
+    MatTableModule,
     MatListModule,
     MatSidenavModule,
     MatPaginatorModule,
