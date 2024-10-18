@@ -54,12 +54,31 @@ export class DrinkService {
     { name: 'The Artist', recipe: 'Purple Gin 6cl, Gurkenschale 2-3 Stück, Orangenschale 2-3 Stück, 0.5 Zitrone (1 se nao tiver muito suco), Gommesirup (2 Schus oder 4 cl), Glas vorkühlen mit Crushed ice, Coloca espuma no copo 1/3 do copo, decora a vontade com chispinhas' },
     { name: 'Ginger Highball', recipe: 'Red Label/Jack Daniels 6cl, 1 Halbe Limette, Gommesirup (2 Schus oder 4 cl), Ingwer fein geschnitten, Ginger Ale (Thomas Henry), Mistura no copo, no precisa shakear' },
     { name: 'Mezcal Highball', recipe: 'Mezcal 4cl, Olympia 1cl, White Vermouth 2cl, 1/2 Orange, Spicy Ginger (Thomas Henry), Mistura no copo, no precisa shakear' },
+    { name: 'Tangerine Rush', recipe: '40ml Mezcal, 20ml Italicus, 1 Tangerine, 1 ½ Schuss Agave , Ein bisschen Salz, 1Limette, Tajin, Stück Mandarine als Deko' },
     { name: 'Primitivo', recipe: 'Wein' },
     { name: 'Sauvignon Touraine', recipe: 'Wein' },
     { name: 'La Croisade', recipe: 'Wein' },
     { name: 'Grauburgunder', recipe: 'Wein' },
-    { name: 'Elis & Tom', recipe: 'Cachaca 6cl, Maraschino 1 cl, Gommesirup (2 Schus oder 4cl), Aquafaba 6cl (2 Schuss), Coloca um cereija no fundo do copo e um pouco do sirup das cerejas, coloca crushed ice no copo (metade), coloca drink, depois coloca mais crushed ice e uma cereja com o sirup das cerejas para decorar' }
-  ];
+    { name: 'Elis & Tom', recipe: 'Cachaca 6cl, Maraschino 1 cl, Gommesirup (2 Schus oder 4cl), Aquafaba 6cl (2 Schuss), Coloca um cereija no fundo do copo e um pouco do sirup das cerejas, coloca crushed ice no copo (metade), coloca drink, depois coloca mais crushed ice e uma cereja com o sirup das cerejas para decorar' },
+    { name: 'Flor de Oaxaca', recipe: 'Hibiskus, Orange, Limette, Mezcal, Tajin' },
+    { name: 'Mescalinha', recipe: 'Caipi mit Mezcal, Limette, Orange, Tajin' },
+    { name: 'Mescalita', recipe: '(Margarita mit Mezcal, Limette)' },
+    { name: 'Tasty fruity iced tea', recipe: 'Limette, schwarzer Tee?)' },
+    { name: 'Cuba libre', recipe: '½ Limette, 4cl Rum, 1 Cola, ' },
+    { name: 'Moscow Mule', recipe: '6cl Vodka, ½ Limette, Ingwersirup, Ginger beer, Ingwer' },
+    { name: 'Manhattan', recipe: 'Gekühltes Glas, 6cl Rye Whiskey, 3cl toter Vermouth, Orange bitter Tropfen, Chocolate Tropfen' },
+    { name: 'Polaris', recipe: '4cl Martini,1/2 Zitrone, 4cl Holunder Sirup, Minzblätter beim shaken, Weinglas, 4 Eiswürfel, Halb Tonic - Halb Sekt' },
+    { name: 'Aperol Spritz', recipe: '5cl Aperol, Eis, Prosecco bis zur Mitte, Sprudelwasser, Orange Deko' },
+    { name: 'Martini', recipe: '15cl grüner Vermouth, 45cl Gin, Oliven' },
+    { name: 'Pink kos. Spritz', recipe: 'Spritz 60cl Rose Vermouth, Tonic' },
+    { name: 'Mint Julep', recipe: 'Minze stampfen, 60cl Rye grún, Crushed ice, Angostura bitter garradinha, Limonello' },
+    { name: 'Cuban ice tea', recipe: 'Eistee 6cl, Havanna Rum, 1 Zitrone, 2 Aquafaba' },
+    { name: 'Moscow Mule', recipe: '50ml Ron proibido, 10ml Ancho braun, 20ml Schokosirup, 10ml Haselnuss, Espresso???' },
+    { name: 'Hugo', recipe: '2cl Holundersirup, Minze, Sekt, Sprudelwasser, ½ Limette, Limettenschale' },
+    { name: 'Espresso Martini', recipe: 'Kaltes Glas , Martini, Espresso, 6cl Vodka, Schokoladen bitters' },
+    { name: 'Dry Martini', recipe: '75cl Gin, 15cl Vermouth trocken, Tropfen Orange bitters' },
+    { name: 'Old fashioned', recipe: '6cl Rye Whiskey, 1cl-1,5cl Sirup, Orangenschale' }
+  ]
 
   getDrinks(): Observable<Drink[]> {
     return of(this.drinks);
