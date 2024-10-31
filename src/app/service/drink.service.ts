@@ -73,7 +73,7 @@ export class DrinkService {
     { name: 'Pink kos. Spritz', recipe: 'Spritz 60cl Rose Vermouth, Tonic' },
     { name: 'Mint Julep', recipe: 'Minze stampfen, 60cl Rye grún, Crushed ice, Angostura bitter garradinha, Limonello' },
     { name: 'Cuban ice tea', recipe: 'Eistee 6cl, Havanna Rum, 1 Zitrone, 2 Aquafaba' },
-    { name: 'Moscow Mule', recipe: '50ml Ron proibido, 10ml Ancho braun, 20ml Schokosirup, 10ml Haselnuss, Espresso???' },
+    { name: 'Damaskus', recipe: '50ml Ron proibido, 10ml Ancho braun, 20ml Schokosirup, 10ml Haselnuss, Espresso???' },
     { name: 'Hugo', recipe: '2cl Holundersirup, Minze, Sekt, Sprudelwasser, ½ Limette, Limettenschale' },
     { name: 'Espresso Martini', recipe: 'Kaltes Glas , Martini, Espresso, 6cl Vodka, Schokoladen bitters' },
     { name: 'Dry Martini', recipe: '75cl Gin, 15cl Vermouth trocken, Tropfen Orange bitters' },
