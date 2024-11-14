@@ -77,7 +77,11 @@ export class DrinkService {
     { name: 'Hugo', recipe: '2cl Holundersirup, Minze, Sekt, Sprudelwasser, ½ Limette, Limettenschale' },
     { name: 'Espresso Martini', recipe: 'Kaltes Glas , Martini, Espresso, 6cl Vodka, Schokoladen bitters' },
     { name: 'Dry Martini', recipe: '75cl Gin, 15cl Vermouth trocken, Tropfen Orange bitters' },
-    { name: 'Old fashioned', recipe: '6cl Rye Whiskey, 1cl-1,5cl Sirup, Orangenschale' }
+    { name: 'Old fashioned', recipe: '6cl Rye Whiskey, 1cl-1,5cl Sirup, Orangenschale' },
+    { name: 'Jazz Fizz', recipe: 'Whiseky souer com gin mas no copo bonito' },
+    { name: 'Old Cuban', recipe: '40cl Rum, Minze, 1 Limmete, Gum, Angustura 9x, Shake, Peneira, Long Glaser, Proscecco' },
+    { name: 'Mont Blanc', recipe: 'Limmete, Agava 2x, Controu 2cl, Salz, Mescal 4cl, Leite de coco, shake, Copp redondo agua' },
+    { name: 'Coco Colada', recipe: '6cl Rum, Ananas Saft, Bischen Gomm, Aquafafaba, 2cl Dorda, Kokosmilch' }
   ]
 
   getDrinks(): Observable<Drink[]> {
