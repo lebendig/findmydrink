@@ -81,7 +81,9 @@ export class DrinkService {
     { name: 'Jazz Fizz', recipe: 'Whiseky souer com gin mas no copo bonito' },
     { name: 'Old Cuban', recipe: '40cl Rum, Minze, 1 Limmete, Gum, Angustura 9x, Shake, Peneira, Long Glaser, Proscecco' },
     { name: 'Mont Blanc', recipe: 'Limmete, Agava 2x, Controu 2cl, Salz, Mescal 4cl, Leite de coco, shake, Copp redondo agua' },
-    { name: 'Coco Colada', recipe: '6cl Rum, Ananas Saft, Bischen Gomm, Aquafafaba, 2cl Dorda, Kokosmilch' }
+    { name: 'Coco Colada', recipe: '6cl Rum, Ananas Saft, Bischen Gomm, Aquafafaba, 2cl Dorda, Kokosmilch' },
+    { name: 'Elis und Tom', recipe: '6cl cachacha, 2cl Maragino/Luxeardo, 1 limao, gum, aquafaba, copo whisky com caldo cereija, enche crushed ice, decora com sirupe e uma ceraja no palito' },
+    { name: 'Whiseky Algo', recipe: 'Gum, Peycheviter, Angusutra, 6cm whikey, nao shake, absinto spray' }
   ]
 
   getDrinks(): Observable<Drink[]> {
